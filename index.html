@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>TicketPro</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<style>
+
+.container{
+          border: 3px solid lightpink;
+          background-color: floralwhite;
+          margin-top: 25px;
+          width: 660px;
+          padding-top: 5px;
+          padding-bottom: 5px;
+          border-radius: 10px;
+}  
+i{
+    font-size: 7.5px;
+}
+h1,summary,p{
+    color: rosybrown;
+}
+img{
+    width: 450px;
+    height: 450px;
+}
+
+</style>
+
+<body>
+    <div class="container">
+        <h1>TICKET BUYING: THE AMAZING RAD SHOW</h1>
+    <details>
+        <summary>Personal Information</summary>
+<div class="row">
+        <div class="col">
+            <input type="text" class="form-control" id="Name" placeholder="Full Name">
+        </div>
+        <div class="col">
+            <input type="text" class="form-control" id="Email" placeholder="Email">
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col">
+            <input type="text" class="form-control" id="age" placeholder="Age">
+        </div>
+        <div class="col">
+            <input type="text" class="form-control" id="number" placeholder="Phone number">
+        </div>
+    </div>
+
+<i> ‼️ By submitting, you are consenting to send your data to us</i>
+<br>
+<button type="button" class="btn btn-dark btn-sm" onclick="message()"> SUBMIT INFO </button>
+
+    </details>
+
+<p> ___________________________ </p>
+    <details>
+        <summary>Ticket Buying</summary>
+<form>
+  <label> Choose your seat:</label>  
+<select class="form-select" id="seat">
+    <option value="none"> Select </option>
+    <option value="2500">  General Administration </option>
+    <option value="13000">  Lower Box A </option>
+    <option value="1540">  Lower Box B </option>
+    <option value="18500">  VIP gold</option>
+</select>
+
+    <label> Discounts !</label>
+ <select class="form-select" id="discount">
+    <option value="none"> Select </option>
+    <option value="0.2"> PWD/ SC / Student </option>
+    <option value="0"> Regular </option>
+</select>
+
+<br>
+
+<button type="button" class="btn btn-dark btn-sm" onclick="check_discount()"> TOTAL TICKET PRICE</button>
+</form>
+    </details>
+
+<p> ___________________________ </p>
+
+<details>
+        <summary>Ticket Printing</summary>
+
+<img src="tick.png">
+
+<button type="button" class="btn btn-dark btn-sm"> PRINT YOUR TICKET</button> 
+</details>
+
+<br>
+
+<button type="button" class="btn btn-dark btn-sm"> BUY MORE TICKETS</button>
+
+<script>
+function message(){
+ alert("Thank you, Please proceed to the next page");
+}
+
+function check_discount() {
+    var seat1 = document.getElementById('seat').value;
+    var disc1 = document.getElementById('discount').value;
+    var final_rate = seat1 - (disc1 * seat1);
+
+    window.alert('Your total ticket price is' +  ' ' + final_rate)
+
+}  
+</script>
+
+</body>
